@@ -1,0 +1,23 @@
+name: Quarkus Repository Validation
+
+on:
+  workflow_call:
+
+permissions:
+  contents: read
+
+jobs:
+
+  validate-quarkus:
+
+    name: Validate Quarkus Repository
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Run Quarkus validation
+        uses: avasquezedu/quarkus-repo-validator/.github/actions/validate-quarkus@v1

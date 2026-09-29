@@ -1,0 +1,21 @@
+name: Quarkus Repository Validator
+description: Validate Quarkus application.yml and dev-vars.yaml
+
+runs:
+  using: composite
+
+  steps:
+    - name: Setup Python
+      uses: actions/setup-python@v6
+      with:
+        python-version: '3.12'
+
+    - name: Install YAML parser
+      shell: bash
+      run: |
+        python -m pip install --quiet PyYAML
+
+    - name: Validate Quarkus repository
+      shell: bash
+      run: |
+        python "${{ github.action_path }}/validate.py"

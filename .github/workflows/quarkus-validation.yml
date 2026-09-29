@@ -20,4 +20,4 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Run Quarkus validation
-        uses: avasquezedu/quarkus-repo-validator/.github/actions/validate-quarkus@v1
+        uses: avasquezedu/quarkus-repo-validator/.github/actions/validate-quarkus@main
